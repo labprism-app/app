@@ -1,0 +1,55 @@
+{
+  "slug": "labprism",
+  "title": "LabPrism",
+  "description": "Inspect lab observations with their original units, dates and source reference text. LabPrism keeps normalized record fields available beside readable results.",
+  "attribution": "Built on the FinchNode production API.",
+  "domain": "labprismapp.com",
+  "purpose": "Lab result inspector",
+  "theme": "Dark teal scientific console",
+  "workflow": "Switch between lab observations, inspect source-provided reference text, and examine the exact FHIR resource and diagnostic report. No historical trend is invented.",
+  "repositoryStatus": "public",
+  "renderStatus": "live",
+  "organizationSlug": "labprism-app",
+  "repository": "https://github.com/labprism-app/app",
+  "liveUrl": "https://labprism.onrender.com/",
+  "homepage": "individually designed full website",
+  "importRoute": "/#/import",
+  "subject": "Lab result viewer & source detail inspector",
+  "color": "#165b58",
+  "paper": "#eff8f5",
+  "label": "Inside the observation",
+  "article": "lab-results-with-source-context",
+  "headline": "A lab result is more than a number",
+  "summary": "How LabPrism keeps units, dates, reference text and normalized fields beside a result without inventing an interpretation.",
+  "topics": [
+    "lab-results",
+    "observations",
+    "fhir"
+  ],
+  "sections": [
+    [
+      "Keep the observation together",
+      "LabPrism is a viewer for the observations returned in an authorized record. It keeps a result beside its supplied name, unit, date and reference text. These fields are separate parts of the record. Combining them into a single score would hide useful detail, so the interface lets the visitor select an observation and inspect its individual fields."
+    ],
+    [
+      "Reference text is source information",
+      "If a source supplies reference information, the viewer preserves it as context for that observation. It does not create a universal reference range or turn a value into a diagnosis. A missing unit or date remains missing. Questions about meaning, comparisons between laboratories, or whether a result needs action require professional interpretation beyond this interface."
+    ],
+    [
+      "Why there is no invented trend",
+      "A line chart implies repeated measurements on a comparable basis. A single returned observation cannot establish that history. LabPrism therefore emphasizes inspection of available observations rather than synthesizing a time series. Even when several entries are present, their names, units and dates deserve review before a visitor assumes they represent the same measurement."
+    ],
+    [
+      "The normalization boundary",
+      "Our integration uses FinchNode to obtain authorized normalized records through a server connection. The inspection panel shows the returned normalized JSON and available diagnostic report information. It is not a guarantee that the untouched upstream FHIR bundle is present. Keeping this boundary visible helps a developer or curious visitor understand which representation they are actually reading."
+    ],
+    [
+      "Availability and review",
+      "Production activation is pending, so the deployed viewer does not yet establish a successful live connection. Once enabled, returned categories and sync warnings still determine what is available. The public repository explains the observation viewer, connection adapter and category restrictions. The purpose is readable source context, with medical interpretation left to the care team."
+    ]
+  ],
+  "reference": [
+    "FinchNode developer resources",
+    "https://finchnode.com/developers"
+  ]
+}

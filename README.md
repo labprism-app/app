@@ -1,6 +1,6 @@
-# LabPrism
+# LabPrism — Lab result viewer & source detail inspector
 
-Look closely at every result. Built on the FinchNode production API.
+Inspect lab observations with their original units, dates and source reference text. LabPrism keeps normalized record fields available beside readable results.
 
 **Site:** https://labprism.onrender.com/  
 **Repository:** https://github.com/labprism-app/app
@@ -52,3 +52,22 @@ A real patient must perform their own EHR authentication and consent; these test
 ## Domain candidate
 
 `labprismapp.com` was available on September 8, 2026; Porkbun displayed $11.08 for initial registration and renewal. No domain was purchased. Availability and price can change. Add it to Render and the backend's explicit origin allowlist before use.
+
+<!-- public-discovery -->
+## Public guide and project context
+
+[A lab result is more than a number](https://labprism.onrender.com/guides/lab-results-with-source-context.html) — How LabPrism keeps units, dates, reference text and normalized fields beside a result without inventing an interpretation.
+
+[Search LabPrism guides](https://labprism.onrender.com/guides/) · [About the site](https://labprism.onrender.com/about.html) · [Sitemap](https://labprism.onrender.com/sitemap.xml)
+
+LabPrism is a standalone product with its own interface, documentation and repository, prepared for independent business operation and continued development. Its FinchNode integration is documented in the code. Live production activation remains pending.
+
+## Public-page build and discoverability
+
+Edit `content/seo.json` for reviewed article text and site metadata. `npm run build` generates public HTML pages, a sitemap, social metadata and structured data, then prerenders the actual React homepage. `npm run test:seo` checks the built crawl surface after a build. Public guide search filters only public text in the browser; no patient data or search analytics enter the index.
+
+Keep canonical URLs on the deployed origin until a custom domain is registered and configured. Add only public, canonical pages to the sitemap. Validate links, mobile layout and the built HTML after editorial changes. Search engine indexing and rich results are not guaranteed.
+
+## Independent business handoff
+
+[Business handoff](HANDOFF.md) covers product identity, the receiving business’s production setup, domain migration, search verification and ongoing editorial maintenance.
