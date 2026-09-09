@@ -78,3 +78,5 @@ Learn to inspect a lab entry as a complete record: result text, unit, source ref
 
 - [How to inspect a lab result’s fields in LabPrism](https://labprismapp.com/guides/inspect-lab-result-fields.html) — Find the value, unit, source reference text and status behind a lab entry, and inspect the normalized observation without inventing missing information.
 - [Why LabPrism shows missing lab fields explicitly](https://labprismapp.com/guides/missing-lab-fields-in-normalized-records.html) — How LabPrism handles absent units, reference text and interpretation when displaying normalized lab entries from an authorized record connection.
+
+- [Why health AI needs lab context, not just result numbers](https://labprismapp.com/guides/why-health-ai-needs-lab-data-context.html) — LabPrism explores why units, reference text, status and missing fields shape the usefulness of patient data for future AI-assisted lab experiences.

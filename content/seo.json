@@ -159,6 +159,86 @@
           "url": "https://github.com/labprism-app/app/blob/main/app/view.tsx"
         }
       ]
+    },
+    {
+      "slug": "why-health-ai-needs-lab-data-context",
+      "title": "Why health AI needs lab context, not just result numbers",
+      "description": "LabPrism explores why units, reference text, status and missing fields shape the usefulness of patient data for future AI-assisted lab experiences.",
+      "published": "2026-09-09",
+      "theme": "data-ai",
+      "sections": [
+        {
+          "heading": "The unit belongs in the input",
+          "paragraphs": [
+            "A numerical result stripped of its unit is an incomplete input to a lab-oriented product. The test label, available code, source reference text and status can all change what a reader should ask next. A health startup therefore needs a plan for retaining record context before it adds a fluent explanation layer.",
+            "LabPrism’s existing inspector keeps the selected entry visible as both a readable panel and normalized JSON. That pairing is a useful starting point for identifying what any later summary actually had available to it."
+          ]
+        },
+        {
+          "heading": "AI can make information easier to navigate",
+          "paragraphs": [
+            "A proposed assistant could help a user find a particular field, collect questions about an unfamiliar label or explain how to navigate the original report. Those tasks still need a route back to the exact source information. Generating a confident clinical interpretation from incomplete context would be a much larger claim.",
+            "The FDA describes both the potential of AI to draw insights from healthcare data and the need for good machine-learning practice across a product’s lifecycle. That is a useful reference for startup teams considering clinical functionality; it is not evidence that LabPrism has a validated clinical AI feature."
+          ],
+          "links": [
+            {
+              "label": "FDA overview of good machine-learning practice",
+              "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/good-machine-learning-practice-medical-device-development-guiding-principles"
+            }
+          ]
+        },
+        {
+          "heading": "Build an evaluation around missingness",
+          "paragraphs": [
+            "Before choosing a model, define the behavior you want when a reference range, unit or interpretation is absent. A successful output may need to say what is missing and stop. Evaluation examples should include awkward cases, rather than only a complete and easy-to-read observation."
+          ],
+          "items": [
+            "A value with no supplied unit.",
+            "A result with reference text but no interpretation.",
+            "Several similarly named entries from different sources.",
+            "An output that must point back to the selected record."
+          ]
+        },
+        {
+          "heading": "FinchNode connects the category; LabPrism preserves the boundary",
+          "paragraphs": [
+            "LabPrism uses FinchNode in its source implementation for authorized lab records, then displays the normalized fields it receives. The app does not invent a reference range to make the panel look complete. That same discipline would matter if an operator later added AI-assisted navigation.",
+            "A structured API makes fields available to software; it does not guarantee that every field is present or clinically comparable. The selected object and its source context remain the evidence. Live patient imports still require production activation."
+          ],
+          "links": [
+            {
+              "label": "LabPrism result inspector",
+              "url": "https://github.com/labprism-app/app/blob/main/app/view.tsx"
+            },
+            {
+              "label": "FinchNode’s normalized record interface",
+              "url": "https://finchnode.com/ehr-integration-api"
+            }
+          ]
+        },
+        {
+          "heading": "Patient data should narrow uncertainty, not hide it",
+          "paragraphs": [
+            "The opportunity for a health startup is to make the record easier to inspect without erasing its limits. LabPrism currently does that through direct display and source-preserving fallbacks. Any AI addition should be judged against that baseline, with a clear statement of what it can and cannot establish."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Does LabPrism generate diagnoses or AI lab interpretations?",
+          "answer": "No. It displays the result information and interpretation supplied in the returned record, where present."
+        },
+        {
+          "question": "Will more data automatically make an AI feature reliable?",
+          "answer": "No. The data must be appropriate to the intended task, and the output still needs evaluation for errors, omissions and unsupported claims."
+        }
+      ],
+      "references": [
+        {
+          "label": "LabPrism public source repository",
+          "url": "https://github.com/labprism-app/app"
+        }
+      ]
     }
   ]
 }
