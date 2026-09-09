@@ -52,5 +52,113 @@
     "FinchNode developer resources",
     "https://finchnode.com/developers"
   ],
-  "googleVerification": "TMdY5YFKPrSoVv3fC5iyCopvPVAm9JPLyi2OVYoBrOk"
+  "googleVerification": "TMdY5YFKPrSoVv3fC5iyCopvPVAm9JPLyi2OVYoBrOk",
+  "guideIntro": "Learn to inspect a lab entry as a complete record: result text, unit, source reference information, status and the normalized fields behind the display.",
+  "finchnodeContext": "LabPrism builds its result inspector around lab entries returned through FinchNode. The interface keeps supplied units, reference text and missing-field states visible so that a normalized display is not mistaken for a clinical interpretation.",
+  "articles": [
+    {
+      "slug": "inspect-lab-result-fields",
+      "title": "How to inspect a lab result’s fields in LabPrism",
+      "description": "Find the value, unit, source reference text and status behind a lab entry, and inspect the normalized observation without inventing missing information.",
+      "published": "2026-09-09",
+      "sections": [
+        {
+          "heading": "Select the exact entry",
+          "paragraphs": [
+            "The result list shows a label and the date available to the app. Select the entry you want to inspect before comparing details. Similar labels do not establish that two observations used the same method or should be treated as interchangeable."
+          ]
+        },
+        {
+          "heading": "Read the value together with its context",
+          "paragraphs": [
+            "The selected panel displays the result quantity, status, source reference text and any supplied interpretation. Read these together instead of copying the number alone. LabPrism does not generate a replacement reference range when the source omits one."
+          ],
+          "items": [
+            "Check the selected label and available code.",
+            "Keep the unit beside any numerical value you discuss.",
+            "Distinguish source interpretation from your own question about it.",
+            "Notice any field explicitly marked as not supplied."
+          ]
+        },
+        {
+          "heading": "Expand the normalized observation",
+          "paragraphs": [
+            "The inspector below the panel exposes the returned object. Use it to check which field supports the display and whether additional context was returned. The object is the normalized representation used by this app, not a promise of the original lab report or every field in the source system."
+          ]
+        },
+        {
+          "heading": "Keep a route to the original report",
+          "paragraphs": [
+            "If a value or field needs clarification, consult the original report and the appropriate care professional. The app does not diagnose conditions, recalculate laboratory ranges, or establish a historical trend. Public explanations are available now; live imports still depend on production activation."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Why does a result have no reference range?",
+          "answer": "The returned entry may not contain one. LabPrism displays that absence instead of substituting a general range."
+        },
+        {
+          "question": "Is the JSON panel the original laboratory document?",
+          "answer": "No. It shows the normalized entry supplied to the app, which can differ from the original document."
+        }
+      ],
+      "references": [
+        {
+          "label": "LabPrism interface implementation",
+          "url": "https://github.com/labprism-app/app/blob/main/app/view.tsx"
+        }
+      ]
+    },
+    {
+      "slug": "missing-lab-fields-in-normalized-records",
+      "title": "Why LabPrism shows missing lab fields explicitly",
+      "description": "How LabPrism handles absent units, reference text and interpretation when displaying normalized lab entries from an authorized record connection.",
+      "published": "2026-09-09",
+      "sections": [
+        {
+          "heading": "Absence is part of the result display",
+          "paragraphs": [
+            "A result inspector needs to distinguish a supplied value from an absent field. LabPrism uses explicit fallback text for missing reference information, interpretation and source details. A fallback label describes the display state; it is not a finding about the patient."
+          ]
+        },
+        {
+          "heading": "Do not make a more complete-looking record",
+          "paragraphs": [
+            "The interface reads what was returned and leaves missing clinical context visible. It does not insert a familiar laboratory range or derive a diagnosis from the number. A polished presentation should still let a reader recognize where the available information ends."
+          ]
+        },
+        {
+          "heading": "Inspect the mapping when something looks unexpected",
+          "paragraphs": [
+            "Developers can compare the selected normalized object with the displayed quantity and labels. That is a concrete debugging path: identify the field, check the formatting helper, and verify the fallback. It is more useful than treating every unexpected display as an upstream clinical error."
+          ]
+        },
+        {
+          "heading": "Separate software checks from interpretation",
+          "paragraphs": [
+            "Implementation tests can check that an absent field remains absent and that source text survives formatting. They do not clinically validate a result. A future operator should keep that distinction when adding comparison features. The existing application has not activated live patient connections."
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "question": "Does normalization fill in every missing field?",
+          "answer": "The interface cannot assume it does. It handles the response it receives and exposes missing context explicitly."
+        }
+      ],
+      "finchnode": {
+        "heading": "The FinchNode normalization boundary",
+        "text": "LabPrism uses FinchNode as the upstream connection for its lab category. The product then chooses how to present returned fields and how to describe omissions. Readers can inspect that boundary through the visible JSON and the public implementation.",
+        "label": "FinchNode’s published API contract",
+        "url": "https://finchnode.com/openapi.yaml"
+      },
+      "references": [
+        {
+          "label": "LabPrism interface implementation",
+          "url": "https://github.com/labprism-app/app/blob/main/app/view.tsx"
+        }
+      ]
+    }
+  ]
 }
