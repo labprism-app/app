@@ -11,7 +11,7 @@
   "renderStatus": "live",
   "organizationSlug": "labprism-app",
   "repository": "https://github.com/labprism-app/app",
-  "liveUrl": "https://labprism.onrender.com/",
+  "liveUrl": "https://labprismapp.com/",
   "homepage": "individually designed full website",
   "importRoute": "/#/import",
   "subject": "Lab result viewer & source detail inspector",

@@ -4,7 +4,7 @@ LabPrism is a standalone product prepared for independent business operation and
 
 ## Product and search identity
 
-- Public site: https://labprism.onrender.com/
+- Public site: https://labprismapp.com/
 - Source repository: https://github.com/labprism-app/app
 - Primary subject: Lab result viewer & source detail inspector
 - Editorial source: `content/seo.json`
@@ -20,7 +20,7 @@ The existing privacy notice and import consent text describe the current connect
 
 ## Domain and indexing
 
-The current canonical origin is https://labprism.onrender.com/. A candidate custom domain is documented in the README; it has not been purchased. When a domain is actually owned and configured, update `liveUrl` in `content/seo.json`, set the repository homepage, rebuild, and redirect the old origin to the new one. Verify HTTPS and page-level redirects before switching canonicals. Update the backend origin restrictions before enabling connections on the new domain.
+The canonical origin is https://labprismapp.com/. The domain is registered through Squarespace and assigned to this Render site; `www` redirects to the apex domain. Keep `liveUrl` in `content/seo.json`, repository homepage, sitemaps and DNS aligned. The original https://labprism.onrender.com/ address remains available during migration. Verify HTTPS before publishing domain changes and update the backend origin restrictions before enabling connections on a new domain.
 
 The business should verify its live origin in Google Search Console and Bing Webmaster Tools, then submit `/sitemap.xml`. These verification accounts and tokens are not included in this repository. Review indexing, branded queries, relevant topic queries and clicks after deployment; search engines decide when and whether to index pages. There are no analytics trackers in the app.
 

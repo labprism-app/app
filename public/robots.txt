@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://labprism.onrender.com/sitemap.xml
+Sitemap: https://labprismapp.com/sitemap.xml
